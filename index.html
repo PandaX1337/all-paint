@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>all paint</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="layers-panel">
+      <div id="layers-list"></div>
+      <button id="addLayerBtn" type="button">+ Слой</button>
+      <button id="removeLayerBtn" type="button">–</button>
+      <button id="layerUpBtn" type="button">▲</button>
+      <button id="layerDownBtn" type="button">▼</button>
+    </div>
+    <header>
+      <h1>all paint</h1>
+    </header>
+    <div class="toolbar">
+      <button class="tool" data-tool="brush" title="Кисть">🖌️</button>
+      <button class="tool" data-tool="eraser" title="Ластик">🧽</button>
+      <button class="tool" data-tool="fill" title="Заливка">🪣</button>
+      <button class="tool" data-tool="line" title="Линия">/</button>
+      <button class="tool" data-tool="rect" title="Прямоугольник">▭</button>
+      <button class="tool" data-tool="circle" title="Круг">◯</button>
+      <button class="tool" data-tool="text" title="Текст">T</button>
+      <input type="color" id="colorPicker" title="Цвет">
+      <input type="range" id="sizePicker" min="1" max="50" value="5" title="Толщина">
+      <button id="clearBtn" title="Очистить">🗑️</button>
+      <input type="file" id="imgLoader" accept="image/*" title="Вставить картинку" style="display:none">
+      <button id="imgBtn" title="Вставить картинку">🖼️</button>
+      <button id="saveBtn" title="Сохранить">💾</button>
+      <button id="themeToggle" title="Переключить тему">🌙</button>
+    </div>
+    <div id="tool-settings">
+      <div id="brush-settings" class="tool-panel">
+        <label>Толщина: <input type="range" id="brushSize" min="1" max="50" value="5"></label>
+        <label>Прозрачность: <input type="range" id="brushAlpha" min="0" max="1" step="0.01" value="1"></label>
+      </div>
+      <div id="eraser-settings" class="tool-panel">
+        <label>Толщина: <input type="range" id="eraserSize" min="5" max="100" value="20"></label>
+      </div>
+      <div id="figure-settings" class="tool-panel">
+        <label>Толщина линии: <input type="range" id="figureSize" min="1" max="20" value="3"></label>
+        <label>Цвет: <input type="color" id="figureColor" value="#22223b"></label>
+      </div>
+      <div id="text-settings" class="tool-panel">
+        <label>Размер: <input type="number" id="textSize" min="8" max="72" value="18"></label>
+        <label>Цвет: <input type="color" id="textColor" value="#22223b"></label>
+      </div>
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="drawCanvas" width="900" height="600"></canvas>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html> 
